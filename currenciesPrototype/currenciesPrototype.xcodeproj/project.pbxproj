@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2F178122B94C2400FF5B36 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177722B94C2400FF5B36 /* Trip+CoreDataClass.swift */; };
+		AA2F178222B94C2400FF5B36 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177822B94C2400FF5B36 /* Trip+CoreDataProperties.swift */; };
+		AA2F178322B94C2400FF5B36 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177922B94C2400FF5B36 /* Currency+CoreDataClass.swift */; };
+		AA2F178422B94C2400FF5B36 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177A22B94C2400FF5B36 /* Currency+CoreDataProperties.swift */; };
+		AA2F178522B94C2400FF5B36 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177B22B94C2400FF5B36 /* Country+CoreDataClass.swift */; };
+		AA2F178622B94C2400FF5B36 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177C22B94C2400FF5B36 /* Country+CoreDataProperties.swift */; };
+		AA2F178722B94C2400FF5B36 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177D22B94C2400FF5B36 /* Expense+CoreDataClass.swift */; };
+		AA2F178822B94C2400FF5B36 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177E22B94C2400FF5B36 /* Expense+CoreDataProperties.swift */; };
+		AA2F178922B94C2400FF5B36 /* Language+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177F22B94C2400FF5B36 /* Language+CoreDataClass.swift */; };
+		AA2F178A22B94C2400FF5B36 /* Language+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F178022B94C2400FF5B36 /* Language+CoreDataProperties.swift */; };
 		AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1022B7F85000661D24 /* AppDelegate.swift */; };
 		AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1222B7F85000661D24 /* ViewController.swift */; };
 		AAE94E1622B7F85000661D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE94E1422B7F85000661D24 /* Main.storyboard */; };
@@ -20,6 +30,16 @@
 		3D3FFBE52AAC85E5662ADD9A /* Pods-currenciesPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.release.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		3ECE6916DABEFDBEBE00A7AF /* Pods_currenciesPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currenciesPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDE14C0B15489686F4FD1BC /* Pods-currenciesPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.debug.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.debug.xcconfig"; sourceTree = "<group>"; };
+		AA2F177722B94C2400FF5B36 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2F177822B94C2400FF5B36 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA2F177922B94C2400FF5B36 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2F177A22B94C2400FF5B36 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA2F177B22B94C2400FF5B36 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2F177C22B94C2400FF5B36 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA2F177D22B94C2400FF5B36 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2F177E22B94C2400FF5B36 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA2F177F22B94C2400FF5B36 /* Language+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2F178022B94C2400FF5B36 /* Language+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AAE94E0D22B7F85000661D24 /* currenciesPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = currenciesPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE94E1022B7F85000661D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE94E1222B7F85000661D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +70,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AAD0980822B91A8D00AA4F71 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				AA2F177722B94C2400FF5B36 /* Trip+CoreDataClass.swift */,
+				AA2F177822B94C2400FF5B36 /* Trip+CoreDataProperties.swift */,
+				AA2F177922B94C2400FF5B36 /* Currency+CoreDataClass.swift */,
+				AA2F177A22B94C2400FF5B36 /* Currency+CoreDataProperties.swift */,
+				AA2F177B22B94C2400FF5B36 /* Country+CoreDataClass.swift */,
+				AA2F177C22B94C2400FF5B36 /* Country+CoreDataProperties.swift */,
+				AA2F177D22B94C2400FF5B36 /* Expense+CoreDataClass.swift */,
+				AA2F177E22B94C2400FF5B36 /* Expense+CoreDataProperties.swift */,
+				AA2F177F22B94C2400FF5B36 /* Language+CoreDataClass.swift */,
+				AA2F178022B94C2400FF5B36 /* Language+CoreDataProperties.swift */,
+				AAE94E1722B7F85000661D24 /* currenciesPrototype.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		AAE94E0422B7F85000661D24 = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +109,13 @@
 		AAE94E0F22B7F85000661D24 /* currenciesPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				AAD0980822B91A8D00AA4F71 /* Persistence */,
 				AAE94E1022B7F85000661D24 /* AppDelegate.swift */,
 				AAE94E1222B7F85000661D24 /* ViewController.swift */,
 				AAE94E1422B7F85000661D24 /* Main.storyboard */,
 				AAE94E1A22B7F85300661D24 /* Assets.xcassets */,
 				AAE94E1C22B7F85300661D24 /* LaunchScreen.storyboard */,
 				AAE94E1F22B7F85300661D24 /* Info.plist */,
-				AAE94E1722B7F85000661D24 /* currenciesPrototype.xcdatamodeld */,
 			);
 			path = currenciesPrototype;
 			sourceTree = "<group>";
@@ -88,7 +126,6 @@
 				5DDE14C0B15489686F4FD1BC /* Pods-currenciesPrototype.debug.xcconfig */,
 				3D3FFBE52AAC85E5662ADD9A /* Pods-currenciesPrototype.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,7 +264,17 @@
 			files = (
 				AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */,
 				AAE94E1922B7F85000661D24 /* currenciesPrototype.xcdatamodeld in Sources */,
+				AA2F178722B94C2400FF5B36 /* Expense+CoreDataClass.swift in Sources */,
+				AA2F178322B94C2400FF5B36 /* Currency+CoreDataClass.swift in Sources */,
+				AA2F178122B94C2400FF5B36 /* Trip+CoreDataClass.swift in Sources */,
+				AA2F178222B94C2400FF5B36 /* Trip+CoreDataProperties.swift in Sources */,
+				AA2F178422B94C2400FF5B36 /* Currency+CoreDataProperties.swift in Sources */,
+				AA2F178822B94C2400FF5B36 /* Expense+CoreDataProperties.swift in Sources */,
+				AA2F178A22B94C2400FF5B36 /* Language+CoreDataProperties.swift in Sources */,
+				AA2F178522B94C2400FF5B36 /* Country+CoreDataClass.swift in Sources */,
 				AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */,
+				AA2F178622B94C2400FF5B36 /* Country+CoreDataProperties.swift in Sources */,
+				AA2F178922B94C2400FF5B36 /* Language+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
