@@ -19,5 +19,5 @@ extension Language {
 
     @NSManaged public var name: String?
     @NSManaged public var nativeName: String?
-
+    @NSManaged public var country: Country?
 }

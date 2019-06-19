@@ -20,5 +20,5 @@ extension Currency {
     @NSManaged public var code: String?
     @NSManaged public var name: String?
     @NSManaged public var symbol: String?
-
+    @NSManaged public var country: Country?
 }

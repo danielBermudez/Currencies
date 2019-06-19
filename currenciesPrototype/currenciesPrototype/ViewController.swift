@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBAction func AddTripTouched(_ sender: Any) {
         addTrip()
         print("\n\(trips.count)   ------------------------------\n")
-        for trip in trips {
-            print(trip.currencyType)
+        for country in trips {
+            print("\(country.name), \(country.currency)")
         }
     }
     
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var trips = [Trip]()
+    private var trips = [Country]()
     private var filtered = [Trip]()
     private var isFiltered = false
 
@@ -35,18 +35,26 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
-            trips = try context.fetch(Trip.fetchRequest())
+            trips = try context.fetch(Country.fetchRequest())
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
     private func addTrip() {
-        let trip = Trip(entity: Trip.entity(), insertInto: context)
-        trip.currencyType = "USD"
-        appDelegate.saveContext()
-        trips.append(trip)
+        let country = Country(entity: Country.entity(), insertInto: context)
+        let currency = Currency(entity: Currency.entity(), insertInto: context)
+        country.name = "Colombia"
+        country.alpha3Code = "COL"
+        currency.code = "COP"
+        currency.name = "Colombian Peso"
+        currency.symbol = "$"
+        currency.country = country
         
+//        country.currency?.adding(currency)
+        
+        appDelegate.saveContext()
+        trips.append(country)
     }
     
     private func deleteTrips(){

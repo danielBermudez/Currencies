@@ -3,13 +3,14 @@
     <entity name="Country" representedClassName=".Country" syncable="YES">
         <attribute name="alpha3Code" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currency" syncable="YES"/>
-        <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Language" syncable="YES"/>
+        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currency" inverseName="country" inverseEntity="Currency" syncable="YES"/>
+        <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Language" inverseName="country" inverseEntity="Language" syncable="YES"/>
     </entity>
     <entity name="Currency" representedClassName=".Currency" syncable="YES">
         <attribute name="code" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="symbol" attributeType="String" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="currency" inverseEntity="Country" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName=".Expense" syncable="YES">
         <attribute name="currencyRate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -18,6 +19,7 @@
     <entity name="Language" representedClassName=".Language" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="nativeName" attributeType="String" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="languages" inverseEntity="Country" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName=".Trip" syncable="YES">
         <attribute name="cashAdvance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -28,10 +30,10 @@
         <relationship name="originCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Currency" positionX="267.8125" positionY="25.28515625" width="128" height="88"/>
-        <element name="Language" positionX="-263.453125" positionY="34.71484375" width="128" height="73"/>
-        <element name="Trip" positionX="-18.3984375" positionY="-301.640625" width="119.1171875" height="133"/>
-        <element name="Expense" positionX="214.0625" positionY="-309.08984375" width="128" height="73"/>
         <element name="Country" positionX="-42.796875" positionY="-17.8203125" width="128" height="103"/>
+        <element name="Currency" positionX="267.8125" positionY="25.28515625" width="128" height="103"/>
+        <element name="Expense" positionX="214.0625" positionY="-309.08984375" width="128" height="73"/>
+        <element name="Language" positionX="-263.453125" positionY="34.71484375" width="128" height="88"/>
+        <element name="Trip" positionX="-18.3984375" positionY="-301.640625" width="119.1171875" height="133"/>
     </elements>
 </model>
