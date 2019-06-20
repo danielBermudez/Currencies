@@ -14,12 +14,17 @@ class CountriesLoader {
     private let localStorage = LocalStorage()
     
     private var currencies = [Currency]()
-    
+    private var countries = [Country]()
     
     func testCoreData () {
-        retrieveData { (country, error) in
-//            self.saveFrom(currency: (country?[0].currencies[0])!)
-            self.loadCurrencies()
+        retrieveData { (countries, error) in
+            if let countries = countries {
+            for country in countries {
+                self.saveFrom(countryModel: country)
+            }
+            self.loadCountries()
+            print(countries.count)
+        }
         }
     }
     
@@ -51,6 +56,7 @@ class CountriesLoader {
             print("Could Not Fetch Currency")
         }
     }
+    
     private func saveFrom(currency : CurrencyModel) {
         let context = localStorage.persistentContainer.viewContext
         let currencyEntity = Currency (entity: Currency.entity(), insertInto: context)
@@ -59,6 +65,27 @@ class CountriesLoader {
         currencyEntity.symbol = currency.symbol
         localStorage.saveContext()
         
+    }
+    
+    private func saveFrom(countryModel : CountryModel) {
+        let context = localStorage.persistentContainer.viewContext
+        let countryEntity = Country (entity: Country.entity(), insertInto: context)
+        countryEntity.name = countryModel.name
+        countryEntity.code = countryModel.code
+        localStorage.saveContext()
+        
+    }
+    
+    private func loadCountries(){
+        let context = localStorage.persistentContainer.viewContext
+        do {
+            countries = try context.fetch(Country.fetchRequest())
+            for country in countries {
+            print(country.name)
+            }
+        } catch let error as NSError {
+            print("Could Not Fetch Currency")
+        }
     }
     
 }

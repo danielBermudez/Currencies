@@ -2,7 +2,7 @@
 //  Language+CoreDataProperties.swift
 //  currenciesPrototype
 //
-//  Created by Daniel Bermudez on 6/18/19.
+//  Created by Daniel Bermudez on 6/20/19.
 //  Copyright © 2019 Endava. All rights reserved.
 //
 //
@@ -19,5 +19,23 @@ extension Language {
 
     @NSManaged public var name: String?
     @NSManaged public var nativeName: String?
+    @NSManaged public var countries: NSSet?
+
+}
+
+// MARK: Generated accessors for countries
+extension Language {
+
+    @objc(addCountriesObject:)
+    @NSManaged public func addToCountries(_ value: Country)
+
+    @objc(removeCountriesObject:)
+    @NSManaged public func removeFromCountries(_ value: Country)
+
+    @objc(addCountries:)
+    @NSManaged public func addToCountries(_ values: NSSet)
+
+    @objc(removeCountries:)
+    @NSManaged public func removeFromCountries(_ values: NSSet)
 
 }

@@ -2,7 +2,7 @@
 //  Country+CoreDataProperties.swift
 //  currenciesPrototype
 //
-//  Created by Daniel Bermudez on 6/18/19.
+//  Created by Daniel Bermudez on 6/20/19.
 //  Copyright © 2019 Endava. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension Country {
         return NSFetchRequest<Country>(entityName: "Country")
     }
 
-    @NSManaged public var alpha3Code: String?
+    @NSManaged public var code: String?
     @NSManaged public var name: String?
     @NSManaged public var currency: NSSet?
     @NSManaged public var languages: NSSet?

@@ -2,7 +2,7 @@
 //  Language+CoreDataClass.swift
 //  currenciesPrototype
 //
-//  Created by Daniel Bermudez on 6/18/19.
+//  Created by Daniel Bermudez on 6/20/19.
 //  Copyright © 2019 Endava. All rights reserved.
 //
 //
