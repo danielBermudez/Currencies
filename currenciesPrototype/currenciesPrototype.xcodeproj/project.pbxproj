@@ -17,6 +17,9 @@
 		AA2F178822B94C2400FF5B36 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177E22B94C2400FF5B36 /* Expense+CoreDataProperties.swift */; };
 		AA2F178922B94C2400FF5B36 /* Language+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F177F22B94C2400FF5B36 /* Language+CoreDataClass.swift */; };
 		AA2F178A22B94C2400FF5B36 /* Language+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F178022B94C2400FF5B36 /* Language+CoreDataProperties.swift */; };
+		AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A422BA6D7700B8E734 /* APIRouter.swift */; };
+		AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A622BA809B00B8E734 /* APIClient.swift */; };
+		AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A822BACB7400B8E734 /* CountryModel.swift */; };
 		AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1022B7F85000661D24 /* AppDelegate.swift */; };
 		AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1222B7F85000661D24 /* ViewController.swift */; };
 		AAE94E1622B7F85000661D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE94E1422B7F85000661D24 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		AA2F177E22B94C2400FF5B36 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA2F177F22B94C2400FF5B36 /* Language+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA2F178022B94C2400FF5B36 /* Language+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AADEC2A422BA6D7700B8E734 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		AADEC2A622BA809B00B8E734 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		AADEC2A822BACB7400B8E734 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		AAE94E0D22B7F85000661D24 /* currenciesPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = currenciesPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE94E1022B7F85000661D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE94E1222B7F85000661D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		AADEC2A322BA6D4600B8E734 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AADEC2A422BA6D7700B8E734 /* APIRouter.swift */,
+				AADEC2A622BA809B00B8E734 /* APIClient.swift */,
+				AADEC2A822BACB7400B8E734 /* CountryModel.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AAE94E0422B7F85000661D24 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +125,7 @@
 		AAE94E0F22B7F85000661D24 /* currenciesPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				AADEC2A322BA6D4600B8E734 /* Services */,
 				AAD0980822B91A8D00AA4F71 /* Persistence */,
 				AAE94E1022B7F85000661D24 /* AppDelegate.swift */,
 				AAE94E1222B7F85000661D24 /* ViewController.swift */,
@@ -269,9 +286,12 @@
 				AA2F178122B94C2400FF5B36 /* Trip+CoreDataClass.swift in Sources */,
 				AA2F178222B94C2400FF5B36 /* Trip+CoreDataProperties.swift in Sources */,
 				AA2F178422B94C2400FF5B36 /* Currency+CoreDataProperties.swift in Sources */,
+				AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */,
+				AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */,
 				AA2F178822B94C2400FF5B36 /* Expense+CoreDataProperties.swift in Sources */,
 				AA2F178A22B94C2400FF5B36 /* Language+CoreDataProperties.swift in Sources */,
 				AA2F178522B94C2400FF5B36 /* Country+CoreDataClass.swift in Sources */,
+				AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */,
 				AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */,
 				AA2F178622B94C2400FF5B36 /* Country+CoreDataProperties.swift in Sources */,
 				AA2F178922B94C2400FF5B36 /* Language+CoreDataClass.swift in Sources */,
