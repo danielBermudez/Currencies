@@ -45,7 +45,7 @@ final class APIClient: APIClientProtocol {
         }
         
         do {
-            print(String(decoding: jsonData, as: UTF8.self))
+//            print(String(decoding: jsonData, as: UTF8.self))
             let parsedObjects = try JSONDecoder().decode(decodeType.self, from: jsonData)
             completion(.success(parsedObjects))
         } catch let error {

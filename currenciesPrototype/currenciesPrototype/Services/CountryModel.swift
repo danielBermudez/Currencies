@@ -10,13 +10,13 @@ import Foundation
 
 
 struct  CountryModel : Codable {
-    let alpha3Code : String
+    let code : String
     let name : String
     let currencies : [CurrencyModel]
     let languages : [LanguageModel]
     enum CodingKeys : String,CodingKey {
         case name = "name"
-        case alpha3Code = "alpha3Code"
+        case code = "alpha3Code"
         case currencies = "currencies"
         case languages =  "languages"
         
@@ -24,12 +24,12 @@ struct  CountryModel : Codable {
 }
 
 struct LanguageModel : Codable {
-    let name : String
-    let nativeName : String
+    let name : String?
+    let nativeName : String?
 }
 
 struct CurrencyModel : Codable {
-    let code : String
-    let name : String
-    let symbol : String
+    let code : String?
+    let name : String?
+    let symbol : String?
 }
