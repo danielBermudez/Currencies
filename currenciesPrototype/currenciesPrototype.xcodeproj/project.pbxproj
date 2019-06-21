@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA32448422BD672E00108B62 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448322BD672E00108B62 /* LanguageViewModel.swift */; };
+		AA32448622BD674400108B62 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448522BD674400108B62 /* CurrencyViewModel.swift */; };
 		AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A422BA6D7700B8E734 /* APIRouter.swift */; };
 		AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A622BA809B00B8E734 /* APIClient.swift */; };
 		AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A822BACB7400B8E734 /* CountryModel.swift */; };
-		AAE390DF22BBE083009FCB72 /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390DE22BBE083009FCB72 /* CountriesLoader.swift */; };
+		AAE390DF22BBE083009FCB72 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390DE22BBE083009FCB72 /* CountryViewModel.swift */; };
 		AAE390E122BBEA17009FCB72 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E022BBEA17009FCB72 /* LocalStorage.swift */; };
 		AAE390EC22BC1CD2009FCB72 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E222BC1CD2009FCB72 /* Expense+CoreDataClass.swift */; };
 		AAE390ED22BC1CD2009FCB72 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E322BC1CD2009FCB72 /* Expense+CoreDataProperties.swift */; };
@@ -35,10 +37,12 @@
 		3D3FFBE52AAC85E5662ADD9A /* Pods-currenciesPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.release.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		3ECE6916DABEFDBEBE00A7AF /* Pods_currenciesPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currenciesPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDE14C0B15489686F4FD1BC /* Pods-currenciesPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.debug.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.debug.xcconfig"; sourceTree = "<group>"; };
+		AA32448322BD672E00108B62 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		AA32448522BD674400108B62 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		AADEC2A422BA6D7700B8E734 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		AADEC2A622BA809B00B8E734 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AADEC2A822BACB7400B8E734 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
-		AAE390DE22BBE083009FCB72 /* CountriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoader.swift; sourceTree = "<group>"; };
+		AAE390DE22BBE083009FCB72 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		AAE390E022BBEA17009FCB72 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		AAE390E222BC1CD2009FCB72 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AAE390E322BC1CD2009FCB72 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -120,7 +124,9 @@
 		AAE390DD22BBE067009FCB72 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				AAE390DE22BBE083009FCB72 /* CountriesLoader.swift */,
+				AAE390DE22BBE083009FCB72 /* CountryViewModel.swift */,
+				AA32448322BD672E00108B62 /* LanguageViewModel.swift */,
+				AA32448522BD674400108B62 /* CurrencyViewModel.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -302,12 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE390F122BC1CD2009FCB72 /* Trip+CoreDataProperties.swift in Sources */,
+				AA32448622BD674400108B62 /* CurrencyViewModel.swift in Sources */,
 				AAE390F322BC1CD2009FCB72 /* Language+CoreDataProperties.swift in Sources */,
 				AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */,
 				AAE390EC22BC1CD2009FCB72 /* Expense+CoreDataClass.swift in Sources */,
 				AAE94E1922B7F85000661D24 /* currenciesPrototype.xcdatamodeld in Sources */,
 				AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */,
 				AAE390F422BC1CD2009FCB72 /* Country+CoreDataClass.swift in Sources */,
+				AA32448422BD672E00108B62 /* LanguageViewModel.swift in Sources */,
 				AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */,
 				AAE390F522BC1CD2009FCB72 /* Country+CoreDataProperties.swift in Sources */,
 				AAE390E122BBEA17009FCB72 /* LocalStorage.swift in Sources */,
@@ -318,7 +326,7 @@
 				AAE390EE22BC1CD2009FCB72 /* Currency+CoreDataClass.swift in Sources */,
 				AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */,
 				AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */,
-				AAE390DF22BBE083009FCB72 /* CountriesLoader.swift in Sources */,
+				AAE390DF22BBE083009FCB72 /* CountryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

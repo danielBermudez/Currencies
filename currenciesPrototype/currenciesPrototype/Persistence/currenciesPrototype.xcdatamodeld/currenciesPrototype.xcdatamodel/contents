@@ -30,6 +30,11 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="nativeName" attributeType="String" syncable="YES"/>
         <relationship name="countries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Country" inverseName="languages" inverseEntity="Country" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Trip" representedClassName=".Trip" syncable="YES">
         <attribute name="cashAdvance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>

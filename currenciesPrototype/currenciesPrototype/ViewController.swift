@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-     let countriesLoad =  CountriesLoader()
+     let countriesLoad =  CountryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
