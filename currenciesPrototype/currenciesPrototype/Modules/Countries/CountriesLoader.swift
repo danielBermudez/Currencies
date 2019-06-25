@@ -13,21 +13,20 @@ class CountriesLoader {
     private let apiClient = APIClient()
     private let localStorage = LocalStorage()
     
-    private var currencies = [Currency]()
-    private var countries = [Country]()
+    var currencies = [Currency]()
+    var countries = [Country]()
     
     func testCoreData () {
         retrieveData { (countries, error) in
             if let countries = countries {
-            for country in countries {
-                self.saveFrom(countryModel: country)
+                for country in countries {
+                    self.saveFrom(countryModel: country)
+                }
+                self.loadCountries()
+                print(countries.count)
             }
-            self.loadCountries()
-            print(countries.count)
-        }
         }
     }
-    
     
     private func retrieveData (completion : @escaping ([CountryModel]?,Error?)->Void) {
         // Do any additional setup after loading the view.
@@ -35,7 +34,7 @@ class CountriesLoader {
             guard let strongSelf = self else {return}
             switch response {
             case .success(let countries):
-               
+                
                 completion(countries,nil)
             case .failure(let error) :
                 switch error {
@@ -44,14 +43,14 @@ class CountriesLoader {
                     
                 }
             }
-            
         }
     }
+    
     private func loadCurrencies(){
-       let context = localStorage.persistentContainer.viewContext
+        let context = localStorage.persistentContainer.viewContext
         do {
-          currencies = try context.fetch(Currency.fetchRequest())
-            print(currencies[0].name)
+            currencies = try context.fetch(Currency.fetchRequest())
+//            print(currencies[0].name)
         } catch let error as NSError {
             print("Could Not Fetch Currency")
         }
@@ -80,9 +79,9 @@ class CountriesLoader {
         let context = localStorage.persistentContainer.viewContext
         do {
             countries = try context.fetch(Country.fetchRequest())
-            for country in countries {
-            print(country.name)
-            }
+//            for country in countries {
+//                print(country.name)
+//            }
         } catch let error as NSError {
             print("Could Not Fetch Currency")
         }
