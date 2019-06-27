@@ -14,23 +14,34 @@ class CurrencyViewModel {
         var currencies = [Currency]()
         do {
             currencies = try context.fetch(Currency.fetchRequest())
-//            print(currencies[0].name)
         } catch let error as NSError {
             print("Could Not Fetch Currency")
         }
         return currencies
     }
     
-    private func saveFrom(currencyModel : CurrencyModel) {
+     func convertFrom(currencyModel : CurrencyModel) -> Currency? {
+        if currencyModel.code != nil {
         let currencyEntity = Currency (entity: Currency.entity(), insertInto: context)
         currencyEntity.name = currencyModel.name
-        currencyEntity.code = currencyModel.name
+        currencyEntity.code = currencyModel.code
         currencyEntity.symbol = currencyModel.symbol
-        LocalStorage.shared.saveContext { error in
-            if let error = error {
-                print("Trouble saving expense data: \(error.localizedDescription)")
-            }
+        return currencyEntity
+        } else {
+            return nil 
         }
+    
+    }
+    
+     func convertCurrencyIn(country:CountryModel)-> [Currency] {       
+        var currencyEntities = [Currency]()
+        for currency in country.currencies {
+            if let currencyEntity = convertFrom(currencyModel: currency) {
+                currencyEntities.append(currencyEntity)
+            }
+            
+        }
+        return currencyEntities
     }
     
 }

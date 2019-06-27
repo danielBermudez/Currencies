@@ -33,38 +33,28 @@ class CountryViewModel {
         }
     }
     
-    
-    func testCoreData () {
-        let languageViewModel = LanguageViewModel()
-        let currencyViewModel = CurrencyViewModel()
-//                retrieveData { (countries, error) in
-//                    if let countries = countries {
-//                    for country in countries {
-//                        self.saveFrom(countryModel: country)
-//                        for language in country.languages {
-//                            self.saveFrom(languageModel: language)
-//
-//                        }
-//                    }
-//
-//                    }
-                    self.loadCountries()
-                    languages = languageViewModel.loadLanguages()
-                    print(self.languages .count)
-                    print(self.countries.count)
-                    let result = self.checkIfEntityExists(entity: .country, value: "USA") as? Country
-                    print(result?.name)
-
-//                }
+    func saveData() {
+        retrieveData { [weak self] (countries, error) in
+            guard let strongSelf = self else {return}
+            let languageViewModel = LanguageViewModel()
+            let currencyViewModel = CurrencyViewModel()
+            if let countries = countries {
+                for country in countries {
+                    
+                    let countryEntity = strongSelf.creatEntityFrom(countryModel: country)
+                    let languages = languageViewModel.convertLanguagesIn(country: country)
+                    let currencies = currencyViewModel.convertCurrencyIn(country: country)
+                    strongSelf.relate(languagesTo: languages, country: countryEntity)
+                    strongSelf.relate(currenciesTo: currencies, country: countryEntity)
+                    strongSelf.saveContext()
                 }
+            }
+        }
         
-       
-    
+    }
     
     private func retrieveData (completion : @escaping ([CountryModel]?,Error?)->Void) {
-        // Do any additional setup after loading the view.
-        apiClient.retrieveCountries { [weak self] response in
-            guard let strongSelf = self else {return}
+        apiClient.retrieveCountries {  response in
             switch response {
             case .success(let countries):
                 
@@ -79,22 +69,14 @@ class CountryViewModel {
             
         }
     }
- 
-
     
-    
-    private func saveFrom(countryModel : CountryModel) {
-      
+    private func creatEntityFrom(countryModel : CountryModel) -> Country{
+        
         let countryEntity = Country (entity: Country.entity(), insertInto: context)
         countryEntity.name = countryModel.name
         countryEntity.code = countryModel.code
-        LocalStorage.shared.saveContext { error in
-            if let error = error {
-                print("Trouble saving expense data: \(error.localizedDescription)")
-          
-            }
-            
-        }
+
+        return countryEntity
     }
     
     
@@ -110,19 +92,43 @@ class CountryViewModel {
         }
     }
     
+    private func relate(languagesTo languages :[Language], country: Country){
+        for language in languages {
+            country.addToLanguages(language)
+        }
+        
+    }
+       
+    private func relate(currenciesTo currencies :[Currency], country: Country){
+        for currency in currencies {
+            country.addToCurrency(currency)
+        }
+        
+    }
+    
+    private func saveContext () {
+        LocalStorage.shared.saveContext { error in
+            if let error = error {
+                print("Trouble saving expense data: \(error.localizedDescription)")
+                
+            }
+            
+        }
+    }
+    
     
     private func checkIfEntityExists(entity : EntityType, value: String) -> NSManagedObject? {
         
-       
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
         let predicate = NSPredicate(format: "\(entity.retrieveSearchField()) CONTAINS[c] %@ ", value)
         fetchRequest.predicate = predicate
         do {
             let results = try context.fetch(fetchRequest)
             if results.count > 0 {
-            return (results[0] as? NSManagedObject)
                 print(results.count)
-            }
+                return (results[0] as? NSManagedObject)
+                            }
         } catch {
             print("Could Not Fetch Data")
         }

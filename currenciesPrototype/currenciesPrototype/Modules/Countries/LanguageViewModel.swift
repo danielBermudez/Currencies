@@ -24,17 +24,21 @@ class LanguageViewModel {
         return languages
     }
     
-   func saveFrom(languageModel : LanguageModel) {
+   func convertFrom(languageModel : LanguageModel) -> Language{
     
         let languageEntity = Language(entity: Language.entity(), insertInto: context)
         languageEntity.name = languageModel.name
         languageEntity.nativeName = languageModel.nativeName
-        LocalStorage.shared.saveContext { error in
-            if let error = error {
-                print("Trouble saving expense data: \(error.localizedDescription)")
-                
+    return languageEntity
+    }
+    
+    func convertLanguagesIn(country:CountryModel)-> [Language] {
+        var languageEntities = [Language]()
+        for language in country.languages {
+            if language.name != nil {
+                languageEntities.append(convertFrom(languageModel: language))
             }
-            
         }
+        return languageEntities
     }
 }

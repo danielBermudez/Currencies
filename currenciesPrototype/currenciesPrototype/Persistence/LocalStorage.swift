@@ -34,7 +34,7 @@ final class LocalStorage {
     
     func saveContext(completion:(NSError?) -> Void) {
         let context = persistenceContainer.viewContext
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
         if context.hasChanges {
             do {
                 try context.save()
