@@ -13,7 +13,6 @@ class CountryViewModel {
     private let apiClient = APIClient()
     private let context = LocalStorage.shared.context    
     private var currencies = [Currency]()
-    private var countries = [Country]()
     private var languages = [Language]()
     
     private enum EntityType : String {
@@ -75,21 +74,8 @@ class CountryViewModel {
         let countryEntity = Country (entity: Country.entity(), insertInto: context)
         countryEntity.name = countryModel.name
         countryEntity.code = countryModel.code
-
+        
         return countryEntity
-    }
-    
-    
-    
-    private func loadCountries(){
-        do {
-            countries = try context.fetch(Country.fetchRequest())
-            for country in countries {
-                print(country.name)
-            }
-        } catch let error as NSError {
-            print("Could Not Fetch Cuountries")
-        }
     }
     
     private func relate(languagesTo languages :[Language], country: Country){
@@ -98,7 +84,7 @@ class CountryViewModel {
         }
         
     }
-       
+    
     private func relate(currenciesTo currencies :[Currency], country: Country){
         for currency in currencies {
             country.addToCurrency(currency)
@@ -115,6 +101,18 @@ class CountryViewModel {
             
         }
     }
+    func filtercontries(countryName :String)-> [Country]{
+        let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
+        let predicate =  NSPredicate(format: "name CONTAINS[c] %@  ", countryName)
+        fetchRequest.predicate = predicate
+        var results = [Country]()
+        do {
+            results = try context.fetch(fetchRequest)
+        }  catch {
+            print("Could Not Fetch Data")
+        }
+        return results
+    }
     
     
     private func checkIfEntityExists(entity : EntityType, value: String) -> NSManagedObject? {
@@ -128,7 +126,7 @@ class CountryViewModel {
             if results.count > 0 {
                 print(results.count)
                 return (results[0] as? NSManagedObject)
-                            }
+            }
         } catch {
             print("Could Not Fetch Data")
         }
