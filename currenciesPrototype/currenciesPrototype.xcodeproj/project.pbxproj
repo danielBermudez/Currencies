@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA32448422BD672E00108B62 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448322BD672E00108B62 /* LanguageViewModel.swift */; };
 		AA32448622BD674400108B62 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448522BD674400108B62 /* CurrencyViewModel.swift */; };
+		AA5C4F7022CC079600BF6959 /* CountryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C4F6F22CC079600BF6959 /* CountryType.swift */; };
+		AABB480522CBA73E0079F768 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB480422CBA73E0079F768 /* SearchTableViewController.swift */; };
 		AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A422BA6D7700B8E734 /* APIRouter.swift */; };
 		AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A622BA809B00B8E734 /* APIClient.swift */; };
 		AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A822BACB7400B8E734 /* CountryModel.swift */; };
@@ -39,6 +41,8 @@
 		5DDE14C0B15489686F4FD1BC /* Pods-currenciesPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.debug.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 		AA32448322BD672E00108B62 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		AA32448522BD674400108B62 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		AA5C4F6F22CC079600BF6959 /* CountryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryType.swift; sourceTree = "<group>"; };
+		AABB480422CBA73E0079F768 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		AADEC2A422BA6D7700B8E734 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		AADEC2A622BA809B00B8E734 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AADEC2A822BACB7400B8E734 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA5C4F6E22CBECBC00BF6959 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				AAE94E1222B7F85000661D24 /* ViewController.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
 		AAD0980822B91A8D00AA4F71 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 		AAE390DC22BBE049009FCB72 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AA5C4F6E22CBECBC00BF6959 /* Trips */,
 				AAE390DD22BBE067009FCB72 /* Countries */,
 			);
 			path = Modules;
@@ -127,6 +140,8 @@
 				AAE390DE22BBE083009FCB72 /* CountryViewModel.swift */,
 				AA32448322BD672E00108B62 /* LanguageViewModel.swift */,
 				AA32448522BD674400108B62 /* CurrencyViewModel.swift */,
+				AABB480422CBA73E0079F768 /* SearchTableViewController.swift */,
+				AA5C4F6F22CC079600BF6959 /* CountryType.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -156,7 +171,6 @@
 				AADEC2A322BA6D4600B8E734 /* Services */,
 				AAD0980822B91A8D00AA4F71 /* Persistence */,
 				AAE94E1022B7F85000661D24 /* AppDelegate.swift */,
-				AAE94E1222B7F85000661D24 /* ViewController.swift */,
 				AAE94E1422B7F85000661D24 /* Main.storyboard */,
 				AAE94E1A22B7F85300661D24 /* Assets.xcassets */,
 				AAE94E1C22B7F85300661D24 /* LaunchScreen.storyboard */,
@@ -323,8 +337,10 @@
 				AAE390F222BC1CD2009FCB72 /* Language+CoreDataClass.swift in Sources */,
 				AAE390F022BC1CD2009FCB72 /* Trip+CoreDataClass.swift in Sources */,
 				AAE390ED22BC1CD2009FCB72 /* Expense+CoreDataProperties.swift in Sources */,
+				AA5C4F7022CC079600BF6959 /* CountryType.swift in Sources */,
 				AAE390EE22BC1CD2009FCB72 /* Currency+CoreDataClass.swift in Sources */,
 				AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */,
+				AABB480522CBA73E0079F768 /* SearchTableViewController.swift in Sources */,
 				AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */,
 				AAE390DF22BBE083009FCB72 /* CountryViewModel.swift in Sources */,
 			);
