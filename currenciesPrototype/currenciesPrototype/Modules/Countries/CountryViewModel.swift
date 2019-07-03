@@ -95,7 +95,7 @@ class CountryViewModel {
     private func saveContext () {
         LocalStorage.shared.saveContext { error in
             if let error = error {
-                print("Trouble saving expense data: \(error.localizedDescription)")
+                print("Trouble saving data: \(error.localizedDescription)")
                 
             }
             

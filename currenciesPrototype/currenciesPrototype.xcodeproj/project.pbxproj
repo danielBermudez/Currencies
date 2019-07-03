@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2DB51F22CCFC910049E4D2 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2DB51E22CCFC910049E4D2 /* TripViewModel.swift */; };
+		AA2DB52222CD0A280049E4D2 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2DB52022CD0A280049E4D2 /* Trip+CoreDataClass.swift */; };
+		AA2DB52322CD0A280049E4D2 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2DB52122CD0A280049E4D2 /* Trip+CoreDataProperties.swift */; };
 		AA32448422BD672E00108B62 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448322BD672E00108B62 /* LanguageViewModel.swift */; };
 		AA32448622BD674400108B62 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32448522BD674400108B62 /* CurrencyViewModel.swift */; };
 		AA5C4F7022CC079600BF6959 /* CountryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C4F6F22CC079600BF6959 /* CountryType.swift */; };
-		AABB480522CBA73E0079F768 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB480422CBA73E0079F768 /* SearchTableViewController.swift */; };
+		AABB480522CBA73E0079F768 /* CountrySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB480422CBA73E0079F768 /* CountrySearchViewController.swift */; };
 		AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A422BA6D7700B8E734 /* APIRouter.swift */; };
 		AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A622BA809B00B8E734 /* APIClient.swift */; };
 		AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADEC2A822BACB7400B8E734 /* CountryModel.swift */; };
@@ -20,14 +23,12 @@
 		AAE390ED22BC1CD2009FCB72 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E322BC1CD2009FCB72 /* Expense+CoreDataProperties.swift */; };
 		AAE390EE22BC1CD2009FCB72 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E422BC1CD2009FCB72 /* Currency+CoreDataClass.swift */; };
 		AAE390EF22BC1CD2009FCB72 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E522BC1CD2009FCB72 /* Currency+CoreDataProperties.swift */; };
-		AAE390F022BC1CD2009FCB72 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E622BC1CD2009FCB72 /* Trip+CoreDataClass.swift */; };
-		AAE390F122BC1CD2009FCB72 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E722BC1CD2009FCB72 /* Trip+CoreDataProperties.swift */; };
 		AAE390F222BC1CD2009FCB72 /* Language+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E822BC1CD2009FCB72 /* Language+CoreDataClass.swift */; };
 		AAE390F322BC1CD2009FCB72 /* Language+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390E922BC1CD2009FCB72 /* Language+CoreDataProperties.swift */; };
 		AAE390F422BC1CD2009FCB72 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390EA22BC1CD2009FCB72 /* Country+CoreDataClass.swift */; };
 		AAE390F522BC1CD2009FCB72 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE390EB22BC1CD2009FCB72 /* Country+CoreDataProperties.swift */; };
 		AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1022B7F85000661D24 /* AppDelegate.swift */; };
-		AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1222B7F85000661D24 /* ViewController.swift */; };
+		AAE94E1322B7F85000661D24 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1222B7F85000661D24 /* TripViewController.swift */; };
 		AAE94E1622B7F85000661D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE94E1422B7F85000661D24 /* Main.storyboard */; };
 		AAE94E1922B7F85000661D24 /* currenciesPrototype.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE94E1722B7F85000661D24 /* currenciesPrototype.xcdatamodeld */; };
 		AAE94E1B22B7F85300661D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE94E1A22B7F85300661D24 /* Assets.xcassets */; };
@@ -39,10 +40,13 @@
 		3D3FFBE52AAC85E5662ADD9A /* Pods-currenciesPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.release.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.release.xcconfig"; sourceTree = "<group>"; };
 		3ECE6916DABEFDBEBE00A7AF /* Pods_currenciesPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_currenciesPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDE14C0B15489686F4FD1BC /* Pods-currenciesPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-currenciesPrototype.debug.xcconfig"; path = "Target Support Files/Pods-currenciesPrototype/Pods-currenciesPrototype.debug.xcconfig"; sourceTree = "<group>"; };
+		AA2DB51E22CCFC910049E4D2 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
+		AA2DB52022CD0A280049E4D2 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA2DB52122CD0A280049E4D2 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA32448322BD672E00108B62 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
 		AA32448522BD674400108B62 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		AA5C4F6F22CC079600BF6959 /* CountryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryType.swift; sourceTree = "<group>"; };
-		AABB480422CBA73E0079F768 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		AABB480422CBA73E0079F768 /* CountrySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchViewController.swift; sourceTree = "<group>"; };
 		AADEC2A422BA6D7700B8E734 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		AADEC2A622BA809B00B8E734 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AADEC2A822BACB7400B8E734 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
@@ -52,15 +56,13 @@
 		AAE390E322BC1CD2009FCB72 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AAE390E422BC1CD2009FCB72 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AAE390E522BC1CD2009FCB72 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		AAE390E622BC1CD2009FCB72 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AAE390E722BC1CD2009FCB72 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AAE390E822BC1CD2009FCB72 /* Language+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AAE390E922BC1CD2009FCB72 /* Language+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AAE390EA22BC1CD2009FCB72 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AAE390EB22BC1CD2009FCB72 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AAE94E0D22B7F85000661D24 /* currenciesPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = currenciesPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE94E1022B7F85000661D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAE94E1222B7F85000661D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAE94E1222B7F85000661D24 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		AAE94E1522B7F85000661D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE94E1822B7F85000661D24 /* currenciesPrototype.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = currenciesPrototype.xcdatamodel; sourceTree = "<group>"; };
 		AAE94E1A22B7F85300661D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +93,8 @@
 		AA5C4F6E22CBECBC00BF6959 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				AAE94E1222B7F85000661D24 /* ViewController.swift */,
+				AAE94E1222B7F85000661D24 /* TripViewController.swift */,
+				AA2DB51E22CCFC910049E4D2 /* TripViewModel.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -99,12 +102,12 @@
 		AAD0980822B91A8D00AA4F71 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				AA2DB52022CD0A280049E4D2 /* Trip+CoreDataClass.swift */,
+				AA2DB52122CD0A280049E4D2 /* Trip+CoreDataProperties.swift */,
 				AAE390E222BC1CD2009FCB72 /* Expense+CoreDataClass.swift */,
 				AAE390E322BC1CD2009FCB72 /* Expense+CoreDataProperties.swift */,
 				AAE390E422BC1CD2009FCB72 /* Currency+CoreDataClass.swift */,
 				AAE390E522BC1CD2009FCB72 /* Currency+CoreDataProperties.swift */,
-				AAE390E622BC1CD2009FCB72 /* Trip+CoreDataClass.swift */,
-				AAE390E722BC1CD2009FCB72 /* Trip+CoreDataProperties.swift */,
 				AAE390E822BC1CD2009FCB72 /* Language+CoreDataClass.swift */,
 				AAE390E922BC1CD2009FCB72 /* Language+CoreDataProperties.swift */,
 				AAE390EA22BC1CD2009FCB72 /* Country+CoreDataClass.swift */,
@@ -140,7 +143,7 @@
 				AAE390DE22BBE083009FCB72 /* CountryViewModel.swift */,
 				AA32448322BD672E00108B62 /* LanguageViewModel.swift */,
 				AA32448522BD674400108B62 /* CurrencyViewModel.swift */,
-				AABB480422CBA73E0079F768 /* SearchTableViewController.swift */,
+				AABB480422CBA73E0079F768 /* CountrySearchViewController.swift */,
 				AA5C4F6F22CC079600BF6959 /* CountryType.swift */,
 			);
 			path = Countries;
@@ -321,26 +324,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE390F122BC1CD2009FCB72 /* Trip+CoreDataProperties.swift in Sources */,
+				AA2DB52222CD0A280049E4D2 /* Trip+CoreDataClass.swift in Sources */,
 				AA32448622BD674400108B62 /* CurrencyViewModel.swift in Sources */,
 				AAE390F322BC1CD2009FCB72 /* Language+CoreDataProperties.swift in Sources */,
-				AAE94E1322B7F85000661D24 /* ViewController.swift in Sources */,
+				AAE94E1322B7F85000661D24 /* TripViewController.swift in Sources */,
 				AAE390EC22BC1CD2009FCB72 /* Expense+CoreDataClass.swift in Sources */,
 				AAE94E1922B7F85000661D24 /* currenciesPrototype.xcdatamodeld in Sources */,
 				AADEC2A522BA6D7700B8E734 /* APIRouter.swift in Sources */,
 				AAE390F422BC1CD2009FCB72 /* Country+CoreDataClass.swift in Sources */,
+				AA2DB51F22CCFC910049E4D2 /* TripViewModel.swift in Sources */,
 				AA32448422BD672E00108B62 /* LanguageViewModel.swift in Sources */,
 				AADEC2A722BA809B00B8E734 /* APIClient.swift in Sources */,
 				AAE390F522BC1CD2009FCB72 /* Country+CoreDataProperties.swift in Sources */,
 				AAE390E122BBEA17009FCB72 /* LocalStorage.swift in Sources */,
 				AAE390EF22BC1CD2009FCB72 /* Currency+CoreDataProperties.swift in Sources */,
+				AA2DB52322CD0A280049E4D2 /* Trip+CoreDataProperties.swift in Sources */,
 				AAE390F222BC1CD2009FCB72 /* Language+CoreDataClass.swift in Sources */,
-				AAE390F022BC1CD2009FCB72 /* Trip+CoreDataClass.swift in Sources */,
 				AAE390ED22BC1CD2009FCB72 /* Expense+CoreDataProperties.swift in Sources */,
 				AA5C4F7022CC079600BF6959 /* CountryType.swift in Sources */,
 				AAE390EE22BC1CD2009FCB72 /* Currency+CoreDataClass.swift in Sources */,
 				AADEC2A922BACB7400B8E734 /* CountryModel.swift in Sources */,
-				AABB480522CBA73E0079F768 /* SearchTableViewController.swift in Sources */,
+				AABB480522CBA73E0079F768 /* CountrySearchViewController.swift in Sources */,
 				AAE94E1122B7F85000661D24 /* AppDelegate.swift in Sources */,
 				AAE390DF22BBE083009FCB72 /* CountryViewModel.swift in Sources */,
 			);

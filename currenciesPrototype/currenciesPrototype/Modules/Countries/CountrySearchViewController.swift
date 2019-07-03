@@ -8,10 +8,11 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
+class CountrySearchViewController: UITableViewController {
     let countryViewModel = CountryViewModel()
     let searchController = UISearchController(searchResultsController: nil)
-    var countryType = CountryType?()
+    var countryselectionDelegate : CountrySelectionDelegate?
+    var countryType : CountryType!
     var filteredCountries = [Country]()
     
     
@@ -41,7 +42,7 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Country"
         navigationItem.hidesSearchBarWhenScrolling = false
         
-      
+        
         
         navigationItem.searchController = searchController
         definesPresentationContext = true
@@ -74,8 +75,11 @@ class SearchTableViewController: UITableViewController {
         return cell
     }
     
-    func searchBarIsEmpty() -> Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let delegate = countryselectionDelegate {
+                delegate.countryHasBeenSelected(country: filteredCountries[indexPath.row], countryType: countryType)       
+        }
+        dismissView()
     }
     
     func filteredContentForSearchText(searchText :String){
@@ -87,11 +91,16 @@ class SearchTableViewController: UITableViewController {
     
 }
 
-extension SearchTableViewController : UISearchResultsUpdating {
+extension CountrySearchViewController : UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filteredContentForSearchText(searchText: searchController.searchBar.text!)
     }
-    
-    
 }
+
+protocol CountrySelectionDelegate {
+    func countryHasBeenSelected(country : Country, countryType: CountryType)
+}
+
+
+

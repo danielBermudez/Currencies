@@ -37,9 +37,9 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Trip" representedClassName=".Trip" syncable="YES">
-        <attribute name="cashAdvance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="currencyRate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="currencyType" attributeType="String" syncable="YES"/>
+        <attribute name="cashAdvance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="currencyRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="currencyType" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="destinationCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" syncable="YES"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" syncable="YES"/>
         <relationship name="originCountry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" syncable="YES"/>
