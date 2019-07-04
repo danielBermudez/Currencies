@@ -10,21 +10,27 @@ import UIKit
 
 class ExpenseViewController: UIViewController {
 
+    @IBOutlet weak var pickerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var currencyTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        dismissKey()
+        configuringTargets()
+        hidePickerView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configuringTargets() {
+        currencyTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
     }
-    */
-
+    
+    @objc private func hidePickerView() {
+        pickerHeightConstraint.constant = 0
+    }
+    
+    @objc private func showPickerView() {
+        pickerHeightConstraint.constant = 216
+    }
+    
 }

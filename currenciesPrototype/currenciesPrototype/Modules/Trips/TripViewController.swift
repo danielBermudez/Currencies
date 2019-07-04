@@ -88,9 +88,9 @@ class TripViewController: UIViewController, UITextFieldDelegate {
             if tripViewModel.currencyRatefieldIsNeeded(currencyCode: currencyCode) {
                 CurrencyRateStackView.isHidden = true
             } else {
-                 CurrencyRateStackView.isHidden = false
+                CurrencyRateStackView.isHidden = false
             }
-    }
+        }
     }
     private func updateAvailableCurrencies() {
         availableCurrencies = tripViewModel.listAvaiableCurrencies()
