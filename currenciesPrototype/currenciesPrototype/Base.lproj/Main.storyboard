@@ -134,6 +134,7 @@
                         <outlet property="currencyRate" destination="NCC-lZ-uPb" id="6fY-HA-5Dh"/>
                         <outlet property="destinationSearchField" destination="qn9-xP-2fP" id="vTA-m8-9Kx"/>
                         <outlet property="originSearchField" destination="6ww-7G-Wpb" id="B7s-Rb-3Ye"/>
+                        <outlet property="pickerConstraint" destination="aHE-fY-lo7" id="vWB-58-JnM"/>
                         <outlet property="searchDisplayController" destination="whG-Z9-8Li" id="hsa-GY-Hes"/>
                     </connections>
                 </viewController>
