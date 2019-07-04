@@ -27,6 +27,8 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         //        countryViewModel.saveData()
         configureTextField()
+        configurePickerView()
+        
     }
     private func configureTextField() {
         destinationSearchField.delegate = self
@@ -74,11 +76,11 @@ class TripViewController: UIViewController, UITextFieldDelegate {
 extension TripViewController :UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return availableCurrencies.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return availableCurrencies.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return availableCurrencies[row].code

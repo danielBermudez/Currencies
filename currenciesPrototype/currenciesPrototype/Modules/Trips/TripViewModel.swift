@@ -9,25 +9,34 @@
 import Foundation
 class TripViewModel {
     var trip : Trip?
+    var originCountry: Country?
+    var destinationCountry: Country?
     
     
     func assignCountry (country: Country, countryType :CountryType) {
-        trip = trip ?? Trip(entity: Trip.entity(), insertInto: LocalStorage.shared.context)
+//        trip = trip ?? Trip(entity: Trip.entity(), insertInto: LocalStorage.shared.context)
         if countryType == .origin {
-            trip!.originCountry = country
+            originCountry = country
         } else {
-            trip!.destinationCountry = country
+            destinationCountry = country
         }
     }
     
-    func listAvaiableCurrencies()-> [Currency] {
+    func listAvaiableCurrencies()-> [Currency]{
         var avaiableCurrencies = [Currency]()
-        if let originCurrencies = trip!.originCountry?.currency?.allObjects as? [Currency]{
-            avaiableCurrencies.append(contentsOf: originCurrencies)
+        
+        if let originCountry = originCountry {
+            if let originCurrencies = originCountry.currency?.allObjects as? [Currency]{
+            avaiableCurrencies.append(contentsOf:  originCurrencies )
         }
-        if let destinationCurrencies = trip!.destinationCountry?.currency?.allObjects as? [Currency]{
-            avaiableCurrencies.append(contentsOf: destinationCurrencies)
         }
+        if let destinationCountry = destinationCountry {
+            if let destinationCurrencies = destinationCountry.currency?.allObjects as? [Currency]{
+                avaiableCurrencies.append(contentsOf:  destinationCurrencies )
+            }
+        }
+
+        
         return avaiableCurrencies
     }
     
