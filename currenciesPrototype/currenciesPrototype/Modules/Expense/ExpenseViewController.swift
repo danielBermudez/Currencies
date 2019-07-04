@@ -30,6 +30,7 @@ class ExpenseViewController: UIViewController {
     
     private func configuringTargets() {
         currencyTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
+        currencyTextField.addTarget(self, action: #selector(hidePickerView), for: .editingDidEnd)
     }
     private func configuretextFieldDelegate() {
         currencyTextField.delegate = self
