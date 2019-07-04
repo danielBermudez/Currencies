@@ -40,8 +40,15 @@ class TripViewModel {
         return avaiableCurrencies
     }
     
-    func currencyRatefieldIsNeeded(currency : Currency) -> Bool {
-        return trip?.originCountry?.currency?.contains(currency) ?? false
+    func currencyRatefieldIsNeeded(currencyCode: String) -> Bool {
+        if let originCurrencies = originCountry?.currency?.allObjects as? [Currency] {
+            let resultCurrencies = originCurrencies.filter {$0.code == currencyCode }
+            if resultCurrencies.isEmpty {
+                return true
+            }
+        }
+        
+    return false
        
     }
     

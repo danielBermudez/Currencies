@@ -32,9 +32,14 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         configurePickerView()
         configureTextFieldTargets()
         hidePickerView()
-        dismissKey()
+        dismissKey()   
+        addDoneButton()
+        
     }
     
+    func addDoneButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
+    }
     private func configureTextField() {
         destinationSearchField.delegate = self
         originSearchField.delegate = self
@@ -60,7 +65,12 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         pickerConstraint.constant = 0
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+   
+    @objc private func didTapDoneButton() {
+        
+    }
+    
+     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == originSearchField {
             performSegue(withIdentifier: "showOriginSearchView", sender: self)
         } else if textField == destinationSearchField{
@@ -104,6 +114,10 @@ extension TripViewController :UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return availableCurrencies[row].code
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currencyField.text = availableCurrencies[row].code
+        
     }
     
     
