@@ -111,6 +111,10 @@ class TripViewController: UIViewController, UITextFieldDelegate {
                 countrySearchViewController.countryType = .destination
                 countrySearchViewController.countryselectionDelegate = self
             }
+        }else if segue.identifier == "NewExpense" {
+            if let expenseViewController = segue.destination as? ExpenseViewController {
+                expenseViewController.expenseViewModel.trip = tripViewModel.trip
+            }
         }
     }
 }

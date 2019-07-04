@@ -76,9 +76,7 @@ class TripViewModel {
                 return false
             }
         }
-        
     return true
-       
     }
     
     

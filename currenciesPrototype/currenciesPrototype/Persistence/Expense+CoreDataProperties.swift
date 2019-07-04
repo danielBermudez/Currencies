@@ -2,7 +2,7 @@
 //  Expense+CoreDataProperties.swift
 //  currenciesPrototype
 //
-//  Created by Daniel Bermudez on 6/20/19.
+//  Created by Daniel Bermudez on 7/4/19.
 //  Copyright © 2019 Endava. All rights reserved.
 //
 //
@@ -19,5 +19,6 @@ extension Expense {
 
     @NSManaged public var currencyRate: Double
     @NSManaged public var currencyType: String?
+    @NSManaged public var amount: Double
 
 }

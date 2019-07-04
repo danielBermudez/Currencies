@@ -262,6 +262,9 @@
                         <viewLayoutGuide key="safeArea" id="7hP-cG-bbv"/>
                     </view>
                     <connections>
+                        <outlet property="currencyField" destination="5nk-7p-UcG" id="Uy6-Ei-eFC"/>
+                        <outlet property="currencyPicker" destination="8Yx-Z9-yTh" id="8Ir-Tn-k5d"/>
+                        <outlet property="currencyRateStackView" destination="CLd-kw-Pb3" id="e6F-M4-gqR"/>
                         <outlet property="currencyTextField" destination="5nk-7p-UcG" id="dlx-zC-Kw6"/>
                         <outlet property="pickerHeightConstraint" destination="b46-aO-ndR" id="SnC-2y-hxv"/>
                     </connections>

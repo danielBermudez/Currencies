@@ -23,6 +23,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Expense" representedClassName=".Expense" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="currencyRate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="currencyType" attributeType="String" syncable="YES"/>
     </entity>
@@ -47,7 +48,7 @@
     <elements>
         <element name="Country" positionX="-39.3203125" positionY="-17.8203125" width="128" height="103"/>
         <element name="Currency" positionX="268.7421875" positionY="29.265625" width="128" height="105"/>
-        <element name="Expense" positionX="214.0625" positionY="-309.08984375" width="128" height="73"/>
+        <element name="Expense" positionX="214.0625" positionY="-309.08984375" width="128" height="88"/>
         <element name="Language" positionX="-263.453125" positionY="34.71484375" width="128" height="90"/>
         <element name="Trip" positionX="-18.3984375" positionY="-301.640625" width="119.1171875" height="133"/>
     </elements>
