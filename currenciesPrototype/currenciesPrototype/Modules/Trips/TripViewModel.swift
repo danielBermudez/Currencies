@@ -14,13 +14,42 @@ class TripViewModel {
     
     
     func assignCountry (country: Country, countryType :CountryType) {
-//        trip = trip ?? Trip(entity: Trip.entity(), insertInto: LocalStorage.shared.context)
         if countryType == .origin {
             originCountry = country
         } else {
             destinationCountry = country
         }
     }
+    
+    func saveTrip(cashAdvance: Double, CurrencyCode: String, currencyRate: Double?){
+        trip = trip ?? Trip(entity: Trip.entity(), insertInto: LocalStorage.shared.context)
+        relateOriginCountry()
+        relateDestinationCountry()
+        trip?.cashAdvance = cashAdvance
+        if let currencyRate = currencyRate {
+            trip?.currencyRate = currencyRate
+        }
+        LocalStorage.shared.saveContext { error in
+            if let error = error {
+                print (error)
+            }
+        }
+        
+    }
+    
+    func relateOriginCountry(){
+        if let originCountry = originCountry {
+            trip?.originCountry = originCountry
+            
+        }
+    }
+    
+    func relateDestinationCountry(){
+        if let destinationCountry = destinationCountry {
+            trip?.destinationCountry = destinationCountry
+        }
+    }
+    
     
     func listAvaiableCurrencies()-> [Currency]{
         var avaiableCurrencies = [Currency]()
@@ -44,11 +73,11 @@ class TripViewModel {
         if let originCurrencies = originCountry?.currency?.allObjects as? [Currency] {
             let resultCurrencies = originCurrencies.filter {$0.code == currencyCode }
             if resultCurrencies.isEmpty {
-                return true
+                return false
             }
         }
         
-    return false
+    return true
        
     }
     

@@ -10,7 +10,6 @@ import UIKit
 
 class TripViewController: UIViewController, UITextFieldDelegate {
     
-    
     private let tripViewModel = TripViewModel()
     private let countryViewModel =  CountryViewModel()
     private var availableCurrencies = [Currency]()
@@ -23,6 +22,7 @@ class TripViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak private var CurrencyRateHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pickerConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var CurrencyRateStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         destinationSearchField.delegate = self
         originSearchField.delegate = self
         currencyField.delegate = self
-        
     }
     
     private func configureTextFieldTargets(){
@@ -65,7 +64,12 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         pickerConstraint.constant = 0
     }
     
+
     @objc private func didTapDoneButton() {
+        if let cashAdvance = amountField.text {
+            tripViewModel.saveTrip(cashAdvance:Double(cashAdvance)!, CurrencyCode: currencyField.text!, currencyRate: Double(currencyRate.text!))
+            performSegue(withIdentifier: "NewExpense", sender: self)
+        }
         
     }
     
@@ -79,6 +83,15 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func shouldHideCurrencyRate(){
+        if let currencyCode = currencyField.text {
+            if tripViewModel.currencyRatefieldIsNeeded(currencyCode: currencyCode) {
+                CurrencyRateStackView.isHidden = true
+            } else {
+                 CurrencyRateStackView.isHidden = false
+            }
+    }
+    }
     private func updateAvailableCurrencies() {
         availableCurrencies = tripViewModel.listAvaiableCurrencies()
         currencyPicker.reloadAllComponents()
@@ -118,8 +131,8 @@ extension TripViewController :UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currencyField.text = availableCurrencies[row].code
+        shouldHideCurrencyRate()
     }
-    
 }
 
 extension TripViewController : CountrySelectionDelegate {

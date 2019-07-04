@@ -90,7 +90,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Currency" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NCC-lZ-uPb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Currency Rate" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NCC-lZ-uPb">
                                         <rect key="frame" x="210.5" y="0.0" width="183.5" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -128,6 +128,7 @@
                     <navigationItem key="navigationItem" title="New Trip" id="pXf-Db-ovW"/>
                     <connections>
                         <outlet property="CurrencyRateHeightConstraint" destination="xc7-JR-h12" id="5Ol-5O-jlX"/>
+                        <outlet property="CurrencyRateStackView" destination="bFl-r1-Cpe" id="UXz-O7-8Zi"/>
                         <outlet property="amountField" destination="r0n-l3-tub" id="OrC-Cq-2Sf"/>
                         <outlet property="currencyField" destination="2v2-ZQ-Spr" id="Pfc-Is-yjp"/>
                         <outlet property="currencyPicker" destination="Kul-4t-7Xb" id="Sec-1i-ggR"/>
@@ -136,6 +137,7 @@
                         <outlet property="originSearchField" destination="6ww-7G-Wpb" id="B7s-Rb-3Ye"/>
                         <outlet property="pickerConstraint" destination="aHE-fY-lo7" id="vWB-58-JnM"/>
                         <outlet property="searchDisplayController" destination="whG-Z9-8Li" id="hsa-GY-Hes"/>
+                        <segue destination="IjF-0i-Lci" kind="show" identifier="NewExpense" id="h9A-QU-l1J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,6 +198,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSr-me-pyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2160.8695652173915" y="71.651785714285708"/>
+        </scene>
+        <!--New Expense-->
+        <scene sceneID="347-oG-OWa">
+            <objects>
+                <viewController title="New Expense" id="IjF-0i-Lci" customClass="ExpenseViewController" customModule="currenciesPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MgM-OH-63O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-Nh-qyu">
+                                <rect key="frame" x="10" y="10" width="394" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peg-r0-fhv">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Currency" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-7p-UcG">
+                                        <rect key="frame" x="171.5" y="0.0" width="222.5" height="21"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yx-Z9-yTh">
+                                <rect key="frame" x="47" y="31" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="b46-aO-ndR"/>
+                                </constraints>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-kw-Pb3">
+                                <rect key="frame" x="10" y="282" width="394" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugR-xe-eLR">
+                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Currency Rate" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-zw-vkO">
+                                        <rect key="frame" x="210.5" y="0.0" width="183.5" height="21"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7hP-cG-bbv" firstAttribute="trailing" secondItem="CLd-kw-Pb3" secondAttribute="trailing" constant="10" id="7dP-bf-fk5"/>
+                            <constraint firstItem="7hP-cG-bbv" firstAttribute="trailing" secondItem="FbH-Nh-qyu" secondAttribute="trailing" constant="10" id="FQp-K4-GBd"/>
+                            <constraint firstItem="FbH-Nh-qyu" firstAttribute="leading" secondItem="7hP-cG-bbv" secondAttribute="leading" constant="10" id="T09-Vg-9fv"/>
+                            <constraint firstItem="CLd-kw-Pb3" firstAttribute="top" secondItem="8Yx-Z9-yTh" secondAttribute="bottom" constant="35" id="UeI-Wb-0nP"/>
+                            <constraint firstItem="8Yx-Z9-yTh" firstAttribute="centerX" secondItem="MgM-OH-63O" secondAttribute="centerX" id="huZ-gr-78g"/>
+                            <constraint firstItem="CLd-kw-Pb3" firstAttribute="leading" secondItem="7hP-cG-bbv" secondAttribute="leading" constant="10" id="jyx-sI-iBR"/>
+                            <constraint firstItem="8Yx-Z9-yTh" firstAttribute="top" secondItem="FbH-Nh-qyu" secondAttribute="bottom" id="rkd-fs-HGO"/>
+                            <constraint firstItem="FbH-Nh-qyu" firstAttribute="top" secondItem="7hP-cG-bbv" secondAttribute="top" constant="10" id="z6F-N5-gcq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7hP-cG-bbv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCG-hd-MKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702.8985507246377" y="791.51785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Il5-hr-VLW">
