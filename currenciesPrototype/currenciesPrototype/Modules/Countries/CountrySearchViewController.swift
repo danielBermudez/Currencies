@@ -8,25 +8,34 @@
 
 import UIKit
 
-class CountrySearchViewController: UITableViewController {
+protocol CountrySelectionDelegate {
+    func countryHasBeenSelected(country : Country, countryType: CountryType)
+}
+
+class CountrySearchViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
+
     let countryViewModel = CountryViewModel()
+    var mySearchController = UISearchController()
     let searchController = UISearchController(searchResultsController: nil)
     var countryselectionDelegate : CountrySelectionDelegate?
     var countryType : CountryType!
     var filteredCountries = [Country]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.delegate = self
         configureNavigationBar()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        searchController.isActive = true
         
-        searchController.becomeFirstResponder()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        searchController.isActive = true
+    }
+    
+    func presentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.becomeFirstResponder()
+    }
     
     // MARK: - Configuration
     
@@ -42,17 +51,14 @@ class CountrySearchViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Country"
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        
-        
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
     }
     
     func addCancelButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
     }
-    
-    
     
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
@@ -87,8 +93,6 @@ class CountrySearchViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    
-    
 }
 
 extension CountrySearchViewController : UISearchResultsUpdating {
@@ -97,10 +101,3 @@ extension CountrySearchViewController : UISearchResultsUpdating {
         filteredContentForSearchText(searchText: searchController.searchBar.text!)
     }
 }
-
-protocol CountrySelectionDelegate {
-    func countryHasBeenSelected(country : Country, countryType: CountryType)
-}
-
-
-

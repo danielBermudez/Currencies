@@ -24,7 +24,6 @@ class TripViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pickerConstraint: NSLayoutConstraint!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         countryViewModel.saveData()
@@ -40,6 +39,7 @@ class TripViewController: UIViewController, UITextFieldDelegate {
     func addDoneButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
     }
+    
     private func configureTextField() {
         destinationSearchField.delegate = self
         originSearchField.delegate = self
@@ -65,12 +65,11 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         pickerConstraint.constant = 0
     }
     
-   
     @objc private func didTapDoneButton() {
         
     }
     
-     func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == originSearchField {
             performSegue(withIdentifier: "showOriginSearchView", sender: self)
         } else if textField == destinationSearchField{
@@ -112,15 +111,14 @@ extension TripViewController :UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return availableCurrencies.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return availableCurrencies[row].code
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currencyField.text = availableCurrencies[row].code
-        
     }
-    
-    
     
 }
 
