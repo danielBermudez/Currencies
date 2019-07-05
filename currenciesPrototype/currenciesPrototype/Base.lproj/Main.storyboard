@@ -264,6 +264,23 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="feB-QB-a0I">
+                                <rect key="frame" x="80" y="394" width="324" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzF-1h-yXP">
+                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GgE-dA-w3O">
+                                        <rect key="frame" x="155.5" y="0.0" width="168.5" height="21"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -272,7 +289,10 @@
                             <constraint firstItem="CLd-kw-Pb3" firstAttribute="leading" secondItem="7hP-cG-bbv" secondAttribute="leading" constant="10" id="EpE-Vv-QGh"/>
                             <constraint firstItem="7hP-cG-bbv" firstAttribute="trailing" secondItem="FbH-Nh-qyu" secondAttribute="trailing" constant="10" id="FQp-K4-GBd"/>
                             <constraint firstItem="FbH-Nh-qyu" firstAttribute="leading" secondItem="7hP-cG-bbv" secondAttribute="leading" constant="10" id="T09-Vg-9fv"/>
+                            <constraint firstItem="7hP-cG-bbv" firstAttribute="trailing" secondItem="feB-QB-a0I" secondAttribute="trailing" constant="10" id="VEv-zC-lZz"/>
+                            <constraint firstItem="feB-QB-a0I" firstAttribute="leading" secondItem="7hP-cG-bbv" secondAttribute="leading" constant="80" id="f4o-Ok-vrM"/>
                             <constraint firstItem="8Yx-Z9-yTh" firstAttribute="centerX" secondItem="MgM-OH-63O" secondAttribute="centerX" id="huZ-gr-78g"/>
+                            <constraint firstItem="feB-QB-a0I" firstAttribute="top" secondItem="CLd-kw-Pb3" secondAttribute="bottom" constant="35" id="k4K-VH-KK0"/>
                             <constraint firstItem="CLd-kw-Pb3" firstAttribute="top" secondItem="n4u-oT-5Si" secondAttribute="bottom" constant="35" id="kth-db-7VK"/>
                             <constraint firstItem="8Yx-Z9-yTh" firstAttribute="top" secondItem="FbH-Nh-qyu" secondAttribute="bottom" id="rkd-fs-HGO"/>
                             <constraint firstItem="7hP-cG-bbv" firstAttribute="trailing" secondItem="n4u-oT-5Si" secondAttribute="trailing" constant="10" id="y1F-j5-9uc"/>
@@ -289,6 +309,7 @@
                         <outlet property="currencyRateStackView" destination="CLd-kw-Pb3" id="e6F-M4-gqR"/>
                         <outlet property="currencyTextField" destination="5nk-7p-UcG" id="dlx-zC-Kw6"/>
                         <outlet property="pickerHeightConstraint" destination="b46-aO-ndR" id="SnC-2y-hxv"/>
+                        <outlet property="totalTextField" destination="GgE-dA-w3O" id="iE6-h5-uRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCG-hd-MKi" userLabel="First Responder" sceneMemberID="firstResponder"/>

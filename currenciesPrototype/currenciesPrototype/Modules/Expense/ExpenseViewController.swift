@@ -18,6 +18,8 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var currencyRateField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var currencyRateStackView: UIStackView!
+    @IBOutlet weak var totalTextField: UITextField!
+    
     
     let expenseViewModel = ExpenseViewModel()
     
