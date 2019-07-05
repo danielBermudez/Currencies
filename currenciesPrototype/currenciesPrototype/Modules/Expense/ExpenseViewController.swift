@@ -36,13 +36,19 @@ class ExpenseViewController: UIViewController {
     private func configuringTargets() {
         currencyTextField.addTarget(self, action: #selector(showPickerView), for: .editingDidBegin)
         currencyTextField.addTarget(self, action: #selector(hidePickerView), for: .editingDidEnd)
+        amountTextField.addTarget(self, action: #selector(updateTotalValue), for: .editingChanged)
     }
+    
     private func configuretextFieldDelegate() {
         currencyTextField.delegate = self
     }
     
     private func configurePickerviewDelegate() {
         currencyPicker.delegate = self
+    }
+    
+    @objc private func updateTotalValue(){
+        totalTextField.text = amountTextField.text
     }
     
     func addDoneButton() {
@@ -81,6 +87,7 @@ class ExpenseViewController: UIViewController {
     }
     
 }
+
 extension ExpenseViewController :UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

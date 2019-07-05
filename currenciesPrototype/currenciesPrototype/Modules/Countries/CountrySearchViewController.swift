@@ -58,6 +58,10 @@ class CountrySearchViewController: UITableViewController,UISearchControllerDeleg
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
     }
     
+    func presentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.becomeFirstResponder()
+    }
+    
     // MARK: - Actions
     
     @objc func dismissView() {
@@ -91,6 +95,7 @@ class CountrySearchViewController: UITableViewController,UISearchControllerDeleg
         }
         dismissView()
     }
+    
 }
 
 extension CountrySearchViewController : UISearchResultsUpdating {
