@@ -23,14 +23,16 @@ enum Response<Value> {
 protocol APIClientProtocol {
     func retrieveCountries(completion: @escaping (Response<[CountryModel]>) -> Void)
 }
+
 //MArk - API Client
+
 final class APIClient: APIClientProtocol {
-   
+    
     func retrieveCountries(completion: @escaping (Response<[CountryModel]>) -> Void) {
         Alamofire.request(APIRouter.retrieveCountries)
             .validate(statusCode:200..<300)
             .responseJSON(completionHandler: {[weak self] dataResponse in
-               self?.handleJSONResponse(response: dataResponse, decodeType: [CountryModel].self, completion: completion)
+                self?.handleJSONResponse(response: dataResponse, decodeType: [CountryModel].self, completion: completion)
             })
     }
     
@@ -45,7 +47,6 @@ final class APIClient: APIClientProtocol {
         }
         
         do {
-//            print(String(decoding: jsonData, as: UTF8.self))
             let parsedObjects = try JSONDecoder().decode(decodeType.self, from: jsonData)
             completion(.success(parsedObjects))
         } catch let error {

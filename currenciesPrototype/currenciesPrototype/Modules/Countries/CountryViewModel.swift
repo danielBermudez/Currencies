@@ -11,26 +11,7 @@ import CoreData
 
 class CountryViewModel {
     private let apiClient = APIClient()
-    private let context = LocalStorage.shared.context    
-    private var currencies = [Currency]()
-    private var languages = [Language]()
-    
-    private enum EntityType : String {
-        case language = "Language"
-        case currency = "Currency"
-        case country = "Country"
-        
-        func retrieveSearchField()-> String{
-            switch self {
-            case .language :
-                return "name"
-            case .currency :
-                return "code"
-            case .country:
-                return "code"
-            }
-        }
-    }
+    private let context = LocalStorage.shared.context
     
     func saveData() {
         retrieveData { [weak self] (countries, error) in
@@ -38,13 +19,12 @@ class CountryViewModel {
             let languageViewModel = LanguageViewModel()
             let currencyViewModel = CurrencyViewModel()
             if let countries = countries {
-                for country in countries {
-                    
-                    let countryEntity = strongSelf.creatEntityFrom(countryModel: country)
-                    let languages = languageViewModel.convertLanguagesIn(country: country)
-                    let currencies = currencyViewModel.convertCurrencyIn(country: country)
-                    strongSelf.relate(languagesTo: languages, country: countryEntity)
-                    strongSelf.relate(currenciesTo: currencies, country: countryEntity)
+                for countryModel in countries {
+                    let countryEntity = strongSelf.createEntityFrom(countryModel: countryModel)
+                    let languages = languageViewModel.convertLanguagesIn(country: countryModel)
+                    let currencies = currencyViewModel.convertCurrencyIn(country: countryModel)
+                    strongSelf.relate(languages: languages, to: countryEntity)
+                    strongSelf.relate(currencies: currencies, to: countryEntity)
                     strongSelf.saveContext()
                 }
             }
@@ -69,8 +49,7 @@ class CountryViewModel {
         }
     }
     
-    private func creatEntityFrom(countryModel : CountryModel) -> Country{
-        
+    private func createEntityFrom(countryModel : CountryModel) -> Country {
         let countryEntity = Country (entity: Country.entity(), insertInto: context)
         countryEntity.name = countryModel.name
         countryEntity.code = countryModel.code
@@ -78,14 +57,14 @@ class CountryViewModel {
         return countryEntity
     }
     
-    private func relate(languagesTo languages :[Language], country: Country){
+    private func relate(languages :[Language],to country: Country) {
         for language in languages {
             country.addToLanguages(language)
         }
         
     }
     
-    private func relate(currenciesTo currencies :[Currency], country: Country){
+    private func relate(currencies :[Currency], to country: Country) {
         for currency in currencies {
             country.addToCurrency(currency)
         }
@@ -101,6 +80,7 @@ class CountryViewModel {
             
         }
     }
+    
     func filtercontries(countryName :String)-> [Country]{
         let fetchRequest: NSFetchRequest<Country> = Country.fetchRequest()
         let predicate =  NSPredicate(format: "name CONTAINS[c] %@  ", countryName)
@@ -113,25 +93,5 @@ class CountryViewModel {
         }
         return results
     }
-    
-    
-    private func checkIfEntityExists(entity : EntityType, value: String) -> NSManagedObject? {
-        
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
-        let predicate = NSPredicate(format: "\(entity.retrieveSearchField()) CONTAINS[c] %@ ", value)
-        fetchRequest.predicate = predicate
-        do {
-            let results = try context.fetch(fetchRequest)
-            if results.count > 0 {
-                print(results.count)
-                return (results[0] as? NSManagedObject)
-            }
-        } catch {
-            print("Could Not Fetch Data")
-        }
-        return nil
-    }
-    
 }
 

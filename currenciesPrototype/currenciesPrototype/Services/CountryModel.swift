@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct  CountryModel : Codable {
     let code : String
     let name : String

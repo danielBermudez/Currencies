@@ -12,7 +12,9 @@ protocol CountrySelectionDelegate {
     func countryHasBeenSelected(country : Country, countryType: CountryType)
 }
 
-class CountrySearchViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
+class CountrySearchViewController: UITableViewController,UISearchControllerDelegate, UISearchBarDelegate {
+    
+    // MARK: - Stored Properties
 
     let countryViewModel = CountryViewModel()
     var mySearchController = UISearchController()
@@ -21,9 +23,10 @@ class CountrySearchViewController: UITableViewController, UISearchControllerDele
     var countryType : CountryType!
     var filteredCountries = [Country]()
     
+     // MARK: - LifeCicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchController.delegate = self
         configureNavigationBar()
         
@@ -33,24 +36,19 @@ class CountrySearchViewController: UITableViewController, UISearchControllerDele
         searchController.isActive = true
     }
     
-    func presentSearchController(_ searchController: UISearchController) {
-        searchController.searchBar.becomeFirstResponder()
-    }
-    
     // MARK: - Configuration
     
-    func configureNavigationBar(){
+    func configureNavigationBar() {
         navigationItem.title = "Country"
         configureSearchController()
         addCancelButton()
     }
     
-    func configureSearchController(){
+    func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Country"
         navigationItem.hidesSearchBarWhenScrolling = false
-        
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
@@ -60,18 +58,24 @@ class CountrySearchViewController: UITableViewController, UISearchControllerDele
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
     }
     
+    // MARK: - Actions
+    
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Table view data source
+    func filteredCountriesForSearchText(searchText :String){
+        filteredCountries = countryViewModel.filtercontries(countryName: searchText)
+        tableView.reloadData()
+    }
+    
+    // MARK: - Table view
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return filteredCountries.count
     }
     
@@ -83,21 +87,15 @@ class CountrySearchViewController: UITableViewController, UISearchControllerDele
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let delegate = countryselectionDelegate {
-                delegate.countryHasBeenSelected(country: filteredCountries[indexPath.row], countryType: countryType)       
+                delegate.countryHasBeenSelected(country: filteredCountries[indexPath.row], countryType: countryType)
         }
         dismissView()
     }
-    
-    func filteredContentForSearchText(searchText :String){
-        filteredCountries = countryViewModel.filtercontries(countryName: searchText)
-        tableView.reloadData()
-    }
-    
 }
 
 extension CountrySearchViewController : UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
-        filteredContentForSearchText(searchText: searchController.searchBar.text!)
+        filteredCountriesForSearchText(searchText: searchController.searchBar.text!)
     }
 }

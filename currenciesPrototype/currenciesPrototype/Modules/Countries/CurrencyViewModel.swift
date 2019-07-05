@@ -10,17 +10,7 @@ import Foundation
 class CurrencyViewModel {
     private let context = LocalStorage.shared.context
     
-    private func loadCurrencies() -> [Currency]{
-        var currencies = [Currency]()
-        do {
-            currencies = try context.fetch(Currency.fetchRequest())
-        } catch let error as NSError {
-            print("Could Not Fetch Currency")
-        }
-        return currencies
-    }
-    
-     func convertFrom(currencyModel : CurrencyModel) -> Currency? {
+     func convertFromCurrencyModelToCurrencyEntity(currencyModel : CurrencyModel) -> Currency? {
         if currencyModel.code != nil {
         let currencyEntity = Currency (entity: Currency.entity(), insertInto: context)
         currencyEntity.name = currencyModel.name
@@ -30,13 +20,12 @@ class CurrencyViewModel {
         } else {
             return nil 
         }
-    
     }
     
      func convertCurrencyIn(country:CountryModel)-> [Currency] {       
         var currencyEntities = [Currency]()
         for currency in country.currencies {
-            if let currencyEntity = convertFrom(currencyModel: currency) {
+            if let currencyEntity = convertFromCurrencyModelToCurrencyEntity(currencyModel: currency) {
                 currencyEntities.append(currencyEntity)
             }
             

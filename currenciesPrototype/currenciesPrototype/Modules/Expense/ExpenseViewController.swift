@@ -15,6 +15,7 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var currencyTextField: UITextField!
     @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var currencyRateField: UITextField!
     
     let expenseViewModel = ExpenseViewModel()
     
@@ -26,6 +27,7 @@ class ExpenseViewController: UIViewController {
         hidePickerView()
         configuretextFieldDelegate()
         configurePickerviewDelegate()
+        addDoneButton()
     }
     
     private func configuringTargets() {
@@ -38,6 +40,10 @@ class ExpenseViewController: UIViewController {
     
     private func configurePickerviewDelegate() {
         currencyPicker.delegate = self
+    }
+    
+    func addDoneButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
     }
     
     @objc private func hidePickerView() {
@@ -61,6 +67,14 @@ class ExpenseViewController: UIViewController {
     private func updateAvailableCurrencies() {
         availableCurrencies = expenseViewModel.listAvaiableCurrencies()
         currencyPicker.reloadAllComponents()
+    }
+    
+    @objc private func didTapDoneButton() {
+        if let currencyRate = currencyRateField.text {
+            expenseViewModel.saveExpense(currencyType: currencyTextField.text!, currencyRate: Double(currencyRate), amount: 10)
+            
+        }
+        
     }
     
 }
