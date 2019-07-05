@@ -16,10 +16,11 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var currencyRateField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var currencyRateStackView: UIStackView!
     
     let expenseViewModel = ExpenseViewModel()
     
-    @IBOutlet weak var currencyRateStackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()        
         dismissKey()
